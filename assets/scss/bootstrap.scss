@@ -1,0 +1,39 @@
+// _custom-variables.scss
+
+// Importe as variáveis do Bootstrap antes de modificar
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+// Modifique as variáveis de cor de acordo com sua preferência
+$primary: #27e8a2;
+$primary-100: rgba(#27e8a2, 0.1);
+$primary-600: #01715b;
+$secondary: #33FF57;
+$success: #3366FF;
+$info: #33FFFF;
+$warning: #FF33FF;
+$danger: #FFFF33;
+$light: #F5F5F5;
+$dark: #222222;
+
+// Defina a função personalizada theme-color para retornar a cor primária desejada
+@function theme-color($color) {
+  @return map-get($theme-colors, $color);
+}
+
+// Sobrescreva as variáveis do Bootstrap com suas cores personalizadas
+$theme-colors: (
+  "primary": $primary,
+  "primary-100": $primary-100,
+  "primary-600": $primary-600,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// Importe o Bootstrap depois de definir as variáveis
+@import "~bootstrap/scss/bootstrap";

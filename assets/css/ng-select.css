@@ -1,0 +1,23 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+.ng-select .ng-select-container {
+  background: #e9edf4; 
+  border: none;
+}
+
+.ng-select.ng-select-opened>.ng-select-container {
+  background: var(--primary-100); 
+}
+
+.ng-select.ng-select-single .ng-select-container {
+  height: 45px;
+}
+
+.ng-select.is-invalid {
+  border: 1px solid var(--red);
+  border-radius: 0.25rem;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+  box-shadow: none;
+}
