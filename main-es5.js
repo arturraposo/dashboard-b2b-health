@@ -793,9 +793,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     var environment = {
-      production: false,
-      //apiUrl: 'http://b2bapidashboard.ddns.net:8888/api'
-      apiUrl: 'http://167.71.102.237:8888/api'
+      apiUrl: 'https://api.b2bhealth.com.br/api'
     };
     /*
      * For easier debugging in development mode, you can import the following file
