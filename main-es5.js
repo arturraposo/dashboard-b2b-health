@@ -557,15 +557,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! src/app/services/auth.service */
     "./src/app/services/auth.service.ts");
 
     var AuthGuard = /*#__PURE__*/function () {
-      function AuthGuard(authService) {
+      function AuthGuard(authService, route) {
         _classCallCheck(this, AuthGuard);
 
         this.authService = authService;
+        this.route = route;
       }
 
       _createClass(AuthGuard, [{
@@ -575,7 +582,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return true;
           }
 
-          window.location.href = '/auth/login';
+          this.route.navigateByUrl('/auth/login');
           return false;
         }
       }]);
@@ -585,7 +592,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AuthGuard.ctorParameters = function () {
       return [{
-        type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
+        type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }];
     };
 
@@ -816,33 +825,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/platform-browser-dynamic */
     "./node_modules/@angular/platform-browser-dynamic/__ivy_ngcc__/fesm2015/platform-browser-dynamic.js");
     /* harmony import */
 
 
-    var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _app_app_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ./app/app.module */
-    "./src/app/app.module.ts");
-    /* harmony import */
+    "./src/app/app.module.ts"); // if (environment.production) {
+    //   enableProdMode();
+    // }
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./environments/environment */
-    "./src/environments/environment.ts");
-
-    if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-      Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
-    }
-
-    Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])["catch"](function (err) {
+    Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_0__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"])["catch"](function (err) {
       return console.error(err);
     });
     /***/
